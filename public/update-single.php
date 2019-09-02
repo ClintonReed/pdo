@@ -79,6 +79,6 @@ if (isset($_GET['id'])) {
     <input type="submit" name="submit" value="Submit">
 </form>
 
-<a href="index.php">Back to home</a>
+<a href="home.php">Back to home</a>
 
 <?php require "templates/footer.php"; ?>

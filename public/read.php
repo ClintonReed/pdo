@@ -16,12 +16,12 @@ if (isset($_POST['submit'])) {
     $connection = new PDO($dsn, $username, $password, $options);
 
     $sql = "SELECT * 
-            FROM users
-            WHERE location = :location";
+            FROM Hogwarts
+            WHERE LocationID = :LocationID"; 
 
-    $location = $_POST['location'];
+    $Location = $_POST['LocationID'];
     $statement = $connection->prepare($sql);
-    $statement->bindParam(':location', $location, PDO::PARAM_STR);
+    $statement->bindParam(':LocationID', $Location, PDO::PARAM_STR);
     $statement->execute();
 
     $result = $statement->fetchAll();
@@ -40,31 +40,32 @@ if (isset($_POST['submit'])) {
     <table>
       <thead>
         <tr>
-          <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email Address</th>
-          <th>Age</th>
-          <th>Location</th>
-          <th>Date</th>
+          
+          <th>UserID</th>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>HouseID</th>
+          <th>ActivityID</th>
+          <th>LocationID</th>
+          
         </tr>
       </thead>
       <tbody>
       <?php foreach ($result as $row) : ?>
         <tr>
-          <td><?php echo escape($row["id"]); ?></td>
-          <td><?php echo escape($row["firstname"]); ?></td>
-          <td><?php echo escape($row["lastname"]); ?></td>
-          <td><?php echo escape($row["email"]); ?></td>
-          <td><?php echo escape($row["age"]); ?></td>
-          <td><?php echo escape($row["location"]); ?></td>
-          <td><?php echo escape($row["date"]); ?> </td>
+          <td><?php echo escape($row["UserID"]); ?></td>
+          <td><?php echo escape($row["FirstName"]); ?></td>
+          <td><?php echo escape($row["LastName"]); ?></td>
+          <td><?php echo escape($row["HouseID"]); ?></td>
+          <td><?php echo escape($row["ActivityID"]); ?></td>
+          <td><?php echo escape($row["LocationID"]); ?></td>
+          
         </tr>
       <?php endforeach; ?>
       </tbody>
     </table>
     <?php } else { ?>
-      <blockquote>No results found for <?php echo escape($_POST['location']); ?>.</blockquote>
+      <blockquote>No results found for <?php echo escape($_POST['LocationID']); ?>.</blockquote>
     <?php } 
 } ?> 
 
@@ -72,11 +73,11 @@ if (isset($_POST['submit'])) {
 
 <form method="post">
   <input name="csrf" type="hidden" value="<?php echo escape($_SESSION['csrf']); ?>">
-  <label for="location">Location</label>
-  <input type="text" id="location" name="location">
+  <label for="LocationID">Location</label>
+  <input type="text" id="LocationID" name="LocationID">
   <input type="submit" name="submit" value="View Results">
 </form>
 
-<a href="index.php">Back to home</a>
+<a href="home.php">Back to home</a>
 
 <?php require "templates/footer.php"; ?>

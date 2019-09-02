@@ -80,6 +80,6 @@ try {
   </table>
 </form>
 
-<a href="index.php">Back to home</a>
+<a href="home.php">Back to home</a>
 
 <?php require "templates/footer.php"; ?>
