@@ -2,16 +2,42 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
 	<title>Volt-A-Mort</title>
-
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="style.css">
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-	<h1>Volt-A-Mort Hogwarts Visitor Database</h1>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<a class="navbar-brand" href="home.php">Volt-A-Mort Visitor Database</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav" text-align="right";>
+				<li class="nav-item">
+					<a class="nav-link" href="create.php">Create</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="read.php">Read</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="update.php">Update</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="delete.php">Delete</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Login Page</a>
+				</li>
+
+			</ul>
+		</div>
+	</nav>
+	<br>
+
+</body>
