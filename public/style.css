@@ -13,3 +13,9 @@ th {
     padding: 5px;
     border-bottom: 1px solid #aaa;
 }
+
+h1 {
+    align-content: center;
+    text-align: center;
+    color: white;
+}
