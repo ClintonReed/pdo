@@ -10,7 +10,7 @@ require "../common.php";
 try {
   $connection = new PDO($dsn, $username, $password, $options);
 
-  $sql = "SELECT * FROM users";
+  $sql = "SELECT * FROM Hogwarts";
 
   $statement = $connection->prepare($sql);
   $statement->execute();
@@ -22,32 +22,29 @@ try {
 ?>
 <?php require "templates/header.php"; ?>
         
-<h2>Update users</h2>
+<h2>Update Users</h2>
 
 <table>
     <thead>
         <tr>
-            <th>#</th>
+            <th>UserID</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Email Address</th>
-            <th>Age</th>
-            <th>Location</th>
-            <th>Date</th>
-            <th>Edit</th>
+            <th>HouseID</th>
+            <th>ActivityID</th>
+            <th>LocationID</th>
         </tr>
     </thead>
     <tbody>
     <?php foreach ($result as $row) : ?>
         <tr>
-            <td><?php echo escape($row["id"]); ?></td>
-            <td><?php echo escape($row["firstname"]); ?></td>
-            <td><?php echo escape($row["lastname"]); ?></td>
-            <td><?php echo escape($row["email"]); ?></td>
-            <td><?php echo escape($row["age"]); ?></td>
-            <td><?php echo escape($row["location"]); ?></td>
-            <td><?php echo escape($row["date"]); ?> </td>
-            <td><a href="update-single.php?id=<?php echo escape($row["id"]); ?>">Edit</a></td>
+            <td><?php echo escape($row["UserID"]); ?></td>
+            <td><?php echo escape($row["FirstName"]); ?></td>
+            <td><?php echo escape($row["LastName"]); ?></td>
+            <td><?php echo escape($row["HouseID"]); ?></td>
+            <td><?php echo escape($row["ActivityID"]); ?></td>
+            <td><?php echo escape($row["LocationID"]); ?></td>
+            <td><a href="update-single.php?id=<?php echo escape($row["UserID"]); ?>">Edit</a></td>
         </tr>
     <?php endforeach; ?>
     </tbody>
